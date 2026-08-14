@@ -25,6 +25,16 @@
 
   const HOME_SECTIONS = ['homeView'];
 
+  // Jump straight to the top on every page change (instant, no smooth
+  // animation) so the next page never appears scrolled-down mid-transition.
+  function scrollToTopInstant() {
+    const docEl = document.documentElement;
+    const prev = docEl.style.scrollBehavior;
+    docEl.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => { docEl.style.scrollBehavior = prev || ''; });
+  }
+
   function showView(html) {
     const view = $('#view');
     const home = $('#homeView');
@@ -37,8 +47,8 @@
       view.hidden = false;
       view.innerHTML = html;
       document.body.dataset.page = 'view';
-      window.scrollTo({ top: 0, behavior: 'auto' });
     }
+    scrollToTopInstant();
   }
 
   function setActiveNav(path) {
@@ -133,6 +143,7 @@
 
   /* ---------------- init ---------------- */
   function init() {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.NITER.initUI();
     window.NITER.initHome();
     window.addEventListener('hashchange', route);

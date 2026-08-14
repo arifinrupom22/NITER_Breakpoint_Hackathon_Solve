@@ -132,9 +132,10 @@
 
   /* ---------------- simulation tick ---------------- */
   /* Demo pacing: a trip from departure point to NITER Campus takes about
-     DEMO_TRIP_SECONDS of wall-clock time (so the hackathon demo is punchy,
-     ~30 s), while ETAs stay realistic in minutes via MIN_PER_SEG. */
-  const DEMO_TRIP_SECONDS = 30;
+     DEMO_TRIP_SECONDS of wall-clock time (so the demo lasts ~1 minute and
+     is easy to watch on the live map), while ETAs stay realistic in minutes
+     via MIN_PER_SEG. */
+  const DEMO_TRIP_SECONDS = 60; // demo trip start→finish wall-clock seconds
   const MIN_PER_SEG = 7; // simulated minutes per route segment (ETA realism)
   function tick() {
     let changed = false;
@@ -335,7 +336,7 @@
           <span class="q-icon">${icon('i-shield')}</span>
           <div>
             <strong style="font-size:15px;display:block;margin-bottom:2px">Live transport tracking is available only to authorized NITER students and teachers.</strong>
-            <span style="font-size:13px;color:var(--ink-500)">Verify with your Name and Bus Card No. (students) or Teacher/Transport ID (teachers) to view live bus locations, routes and ETAs. Unauthorized attempts are logged and reported.</span>
+            <span style="font-size:13px;color:var(--ink-500)">Verify with your Name and Bus Card No. (students) or Teacher Short Name + Teacher/Transport ID (teachers, e.g. SSH + T002) to view live bus locations, routes and ETAs. Unauthorized attempts are logged and reported.</span>
           </div>
           <button class="btn btn-primary" id="seeLocationBtn2" style="margin-left:auto">${icon('i-lock')} Verify &amp; Track</button>
         </div>
@@ -431,27 +432,30 @@
       return;
     }
     openModal(`
-      <div class="demo-note">${icon('i-shield')}<span>Live tracking requires verification. Authorized demo students: <b>Arifin Rupom (BUS06)</b>, <b>Sneha Rahman (BUS26)</b>, <b>Nabila Nawshin (BUS32)</b>. Teachers use their Teacher ID.</span></div>
+      <div class="demo-note">${icon('i-shield')}<span>Live tracking requires verification. Authorized demo students: <b>Arifin Rupom (BUS06)</b>, <b>Sneha Rahman (BUS26)</b>, <b>Nabila Nawshin (BUS32)</b>. Teachers: enter your <b>short name</b> (e.g. <b>SSH</b>) and <b>Teacher/Transport ID</b> (e.g. <b>T002</b>) — full list below.</span></div>
       <div class="tabs" style="margin-top:14px">
         <button class="tab-btn active" data-tab="student">${icon('i-grad')} Student</button>
         <button class="tab-btn" data-tab="teacher">${icon('i-book')} Teacher</button>
       </div>
       <form id="verifyForm">
-        <div class="field"><label class="label">Full Name</label><input id="vName" class="input" required placeholder="e.g. Arifin Rupom" /></div>
+        <div class="field" id="vField1"><label class="label">Full Name</label><input id="vName" class="input" required placeholder="e.g. Arifin Rupom" /></div>
         <div class="field" id="vField2"><label class="label">Bus Card No.</label><input id="vCard" class="input" required placeholder="e.g. BUS06" /></div>
         <button class="btn btn-primary" style="width:100%" type="submit">${icon('i-lock')} Verify &amp; Continue</button>
       </form>
       <p class="hint center mt-16">Unauthorized or incorrect credentials will not reveal any bus location.</p>`, { title: 'Verify Identity' });
 
     let role = 'student';
+    const teacherListHTML = () => `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px">${D().teachers.map((t) => `<span class="chip chip-cat">${esc(t.id)} → ${esc(t.tid || '')}</span>`).join('')}</div>`;
     $$('.tab-btn').forEach((t) => t.addEventListener('click', () => {
       $$('.tab-btn').forEach((x) => x.classList.remove('active'));
       t.classList.add('active');
       role = t.dataset.tab;
-      const f = $('#vField2');
-      f.innerHTML = role === 'student'
+      $('#vField1').innerHTML = role === 'student'
+        ? '<label class="label">Full Name</label><input id="vName" class="input" required placeholder="e.g. Arifin Rupom" />'
+        : '<label class="label">Teacher Short Name / Full Name</label><input id="vName" class="input" required placeholder="e.g. SSH" />';
+      $('#vField2').innerHTML = role === 'student'
         ? '<label class="label">Bus Card No.</label><input id="vCard" class="input" required placeholder="e.g. BUS06" />'
-        : '<label class="label">Teacher / Transport ID</label><input id="vCard" class="input" required placeholder="e.g. T001" />';
+        : `<label class="label">Teacher / Transport ID</label><input id="vCard" class="input" required placeholder="e.g. T001" />${teacherListHTML()}`;
     }));
 
     $('#verifyForm').addEventListener('submit', (e) => {
@@ -464,8 +468,8 @@
         const s = D().students.find((x) => (x.name.toLowerCase() === nl || (x.aka && x.aka.toLowerCase() === nl)) && (x.card.toUpperCase() === cred || x.id.toUpperCase() === cred));
         if (s) session = { role: 'transport-student', name: s.name, id: s.id, card: s.card, eligible: ['SB1', 'SB2'] };
       } else {
-        const t = D().teachers.find((x) => x.name.toLowerCase() === nl && x.id.toUpperCase() === cred);
-        if (t) session = { role: 'transport-teacher', name: t.name, id: t.id, eligible: ['TB1', 'TB2'] };
+        const t = D().teachers.find((x) => (x.name.toLowerCase() === nl || x.id.toLowerCase() === nl) && (String(x.tid || '').toUpperCase() === cred || x.id.toUpperCase() === cred));
+        if (t) session = { role: 'transport-teacher', name: t.name, id: t.id, tid: t.tid, eligible: ['TB1', 'TB2'] };
       }
       if (session) {
         setSession(session);

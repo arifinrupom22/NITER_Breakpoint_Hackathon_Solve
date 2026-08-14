@@ -78,7 +78,10 @@
         <div class="driver-screen">
           <div class="driver-top">
             <div><h3>${esc(drv.busName)}</h3><span>${esc(drv.routeName)}</span></div>
-            <span class="driver-gps" id="drvGps">${icon('i-signal')} GPS off</span>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span class="driver-gps" id="drvGps">${icon('i-signal')} GPS off</span>
+              <button class="driver-logout" id="drvLogout" title="Logout" aria-label="Logout driver">${icon('i-logout')}</button>
+            </div>
           </div>
           <div class="driver-body">
             <div class="driver-big">
@@ -91,6 +94,7 @@
               <button class="btn btn-danger" id="drvEnd" disabled>${icon('i-close')} End Trip</button>
             </div>
             <button class="btn btn-outline" style="width:100%;margin-top:10px;border-color:#fecaca;color:var(--red-600)" id="drvSos">${icon('i-siren')} Emergency SOS</button>
+            <button class="btn btn-outline" style="width:100%;margin-top:10px;color:var(--red-600)" id="drvLogoutTxt">${icon('i-logout')} Logout</button>
             <div class="driver-stat-grid" id="drvStats"></div>
             <h3 style="font-size:13px;font-weight:700;margin-top:16px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-400)">Route Progress</h3>
             <ul class="trip-timeline" id="drvStops"></ul>
@@ -149,6 +153,14 @@
     $('#drvSos').addEventListener('click', () => {
       T.reportEmergency(busId, 'Emergency SOS');
     });
+    const doLogout = () => {
+      if (window.__drvRefresh) { window.removeEventListener('niter:transport', window.__drvRefresh); window.__drvRefresh = null; }
+      localStorage.removeItem(SESSION_KEY);
+      toast('Logged out of Driver Console', 'warn');
+      window.NITER.route();
+    };
+    $('#drvLogout') && $('#drvLogout').addEventListener('click', doLogout);
+    $('#drvLogoutTxt') && $('#drvLogoutTxt').addEventListener('click', doLogout);
     refresh();
     if (window.__drvRefresh) window.removeEventListener('niter:transport', window.__drvRefresh);
     window.__drvRefresh = refresh;
