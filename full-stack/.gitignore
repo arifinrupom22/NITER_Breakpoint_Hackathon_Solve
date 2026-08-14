@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Database files (generated at runtime)
+backend/data/*.json
+!backend/data/.gitkeep
+
+# Flutter / Dart
+App/**/build/
+App/**/.dart_tool/
+App/**/.idea/
+*.iml
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

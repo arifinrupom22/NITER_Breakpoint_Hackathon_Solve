@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="National Institute of Engineering and Research — NITER Smart Campus Management System and NITER Smart Transport. Empowering Education, Innovation and Excellence." />
+  <meta name="theme-color" content="#0b1a38" />
+  <title>NITER — National Institute of Engineering and Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20260814-2" />
+</head>
+<body data-page="home">
+
+<!-- ======================= SVG ICON SPRITE ======================= -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><path d="M8 6h8a3 3 0 0 1 3 3v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9a3 3 0 0 1 3-3z"/><path d="M5 13h14M8 21v-3M16 21v-3"/><circle cx="8.5" cy="17" r=".5"/><circle cx="15.5" cy="17" r=".5"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="m9 4-6 2v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+  <symbol id="i-lab" viewBox="0 0 24 24"><path d="M10 2v7.5L4.5 20a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9.5V2"/><path d="M8.5 2h7M7 15h10"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.3 21.5h11.4a2 2 0 0 0 1.8-3L14 9V3"/><path d="M7.5 14h9"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2-6.2 3.2L6.9 14.2l-5-4.9 6.9-1L12 2z"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M7.5 5C5 6.5 3 9 3 12.5 3 16 4.8 18 7 18c1.8 0 3.2-1.3 3.2-3.2 0-1.8-1.3-3-3-3-.4 0-.8 0-1 .2.4-2 1.8-3.8 3.5-4.7L7.5 5zm10 0C15 6.5 13 9 13 12.5c0 3.5 1.8 5.5 4 5.5 1.8 0 3.2-1.3 3.2-3.2 0-1.8-1.3-3-3-3-.4 0-.8 0-1 .2.4-2 1.8-3.8 3.5-4.7L17.5 5z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4V8z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path d="M22.5 6.4a3 3 0 0 0-2.1-2.1C18.5 3.8 12 3.8 12 3.8s-6.5 0-8.4.5A3 3 0 0 0 1.5 6.4 31 31 0 0 0 1 12a31 31 0 0 0 .5 5.6 3 3 0 0 0 2.1 2.1c1.9.5 8.4.5 8.4.5s6.5 0 8.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23 12a31 31 0 0 0-.5-5.6z"/><path d="m9.8 15.1 5.7-3.1-5.7-3.1v6.2z"/></symbol>
+  <symbol id="i-li" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14h1M14 20h1M18 18h3v3h-3z"/></symbol>
+  <symbol id="i-signal" viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></symbol>
+  <symbol id="i-siren" viewBox="0 0 24 24"><path d="M7 18v-6a5 5 0 0 1 10 0v6M5 18h14M12 4V2M8 5 6 3M16 5l2-2M12 10v4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H4l2.3-2.9A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-fuel" viewBox="0 0 24 24"><path d="M4 22V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M4 12h8M10 4V2"/><path d="M14 12h3a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V9l-3-3"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.3 5.1L3 17.8V21h3.2l6.4-6.4a4 4 0 0 0 5.1-5.3l-2.8 2.8-2.3-2.3 2.8-2.8z"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 9v6"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13 4l-2 16"/></symbol>
+  <symbol id="i-flash" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></symbol>
+  <symbol id="i-thread" viewBox="0 0 24 24"><path d="M4 19c8 1 12-2 12-7 0-3-2-5-5-5-2 0-3 1.5-3 3 0 2 1.5 3 3 3 2 0 3-1 3-3M4 19c0-9 5-15 13-15"/></symbol>
+  <symbol id="i-stitch" viewBox="0 0 24 24"><path d="M4 20c0-9 5-16 16-16M20 20c0-9-5-16-16-16M4 12h16M12 4v16"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3h.1a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5h.1a1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 6-10 6L2 8l10-6z"/><path d="m2 14 10 6 10-6"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></symbol>
+</svg>
+
+<!-- ======================= TOP INFORMATION BAR ======================= -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span class="topbar-name">National Institute of Engineering and Research</span>
+    <div class="topbar-right">
+      <a href="mailto:info@niter.edu.bd"><svg class="ic"><use href="#i-mail"/></svg> info@niter.edu.bd</a>
+      <a href="tel:+88027791094"><svg class="ic"><use href="#i-phone"/></svg> +880 2-7791094</a>
+      <span><svg class="ic"><use href="#i-pin"/></svg> Nayarhat, Savar</span>
+      <button class="toplink" data-goto="#/about">Quick Links</button>
+      <button class="top-icon" id="topSearchBtn" aria-label="Search"><svg class="ic"><use href="#i-search"/></svg></button>
+      <span class="live-clock"><svg class="ic"><use href="#i-clock"/></svg> <span id="live-time">--:--:--</span> <span class="dot">·</span> <span id="live-date">---</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= MAIN HEADER ======================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-main">
+    <a class="logo" href="#/" data-goto="#/">
+      <img src="photos/niter_logo.jpg" alt="NITER Logo" class="logo-mark-img" />
+      <span class="brand-text">
+        <strong>NATIONAL INSTITUTE OF ENGINEERING AND RESEARCH</strong>
+        <em>Smart Campus Management System</em>
+      </span>
+    </a>
+    <div class="header-actions">
+      <button class="h-action" id="headerSearchBtn" aria-label="Search"><svg class="ic"><use href="#i-search"/></svg></button>
+      <button class="h-action" id="notifBtn" aria-label="Notifications"><svg class="ic"><use href="#i-bell"/></svg><span class="notif-dot"></span></button>
+      <button class="h-action menu-btn" id="menuBtn" aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+
+  <!-- ======================= MAIN NAVIGATION ======================= -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <ul class="nav-list" id="navList">
+        <li><a href="#/" data-goto="#/" class="nav-link active">Home</a></li>
+        <li><a href="#/about" data-goto="#/about" class="nav-link">About NITER</a></li>
+        <li><a href="#/academics" data-goto="#/academics" class="nav-link">Academics</a></li>
+        <li><a href="#/departments" data-goto="#/departments" class="nav-link">Departments</a></li>
+        <li><a href="#/admissions" data-goto="#/admissions" class="nav-link">Admissions</a></li>
+        <li><a href="#/research" data-goto="#/research" class="nav-link">Research</a></li>
+        <li><a href="#/notices" data-goto="#/notices" class="nav-link">Notices</a></li>
+        <li><a href="#/news-events" data-goto="#/news-events" class="nav-link">News &amp; Events</a></li>
+        <li><a href="#/campus-life" data-goto="#/campus-life" class="nav-link">Campus Life</a></li>
+        <li><a href="#/student-services" data-goto="#/student-services" class="nav-link">Student Services</a></li>
+        <li class="nav-special"><a href="#/transport" data-goto="#/transport" class="nav-link nav-smart"><svg class="ic"><use href="#i-bus"/></svg> SMART TRANSPORT</a></li>
+        <li class="nav-has-dropdown">
+          <button class="nav-link" id="portalBtn" aria-haspopup="true">PORTAL <svg class="ic"><use href="#i-chev"/></svg></button>
+          <div class="nav-dropdown" id="portalDropdown">
+            <div class="dd-head"><svg class="ic"><use href="#i-lock"/></svg> NITER PORTALS</div>
+            <a href="#/login/student" data-goto="#/login/student">
+              <span class="dd-icon"><svg class="ic"><use href="#i-grad"/></svg></span>
+              <span><strong>Student Portal</strong><small>Access courses, routine, attendance, results, notices, and Helping Zone.</small></span>
+            </a>
+            <a href="#/login/teacher" data-goto="#/login/teacher">
+              <span class="dd-icon"><svg class="ic"><use href="#i-book"/></svg></span>
+              <span><strong>Teacher Portal</strong><small>Manage courses, attendance, marks, routine, and student support.</small></span>
+            </a>
+            <a href="#/login/admin" data-goto="#/login/admin">
+              <span class="dd-icon"><svg class="ic"><use href="#i-shield"/></svg></span>
+              <span><strong>Admin Portal</strong><small>Manage academic information, users, courses, rooms, routines, notices, and reports.</small></span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- ======================= NOTIFICATION PANEL ======================= -->
+<div class="notif-panel" id="notifPanel" hidden>
+  <div class="notif-head">Notifications <button id="notifClose"><svg class="ic"><use href="#i-close"/></svg></button></div>
+  <div class="notif-body" id="notifBody"></div>
+</div>
+
+<!-- ======================= HOME (default view) ======================= -->
+<main id="homeView">
+
+  <!-- ===== HERO SLIDER ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active" data-i="0">
+        <div class="hero-bg" style="background-image:url('assets/images/campus-3.jpg')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-kicker">NITER Smart Campus</p>
+          <h1>Empowering Education,<br/>Innovation and Excellence</h1>
+          <p class="hero-desc">An integrated digital platform connecting students, teachers, departments, and campus administration.</p>
+          <div class="hero-btns">
+            <a href="#/about" class="btn btn-gold"><svg class="ic"><use href="#i-star"/></svg> Explore NITER</a>
+            <a href="#/login/student" class="btn btn-outline-light"><svg class="ic"><use href="#i-lock"/></svg> Access Portal</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-i="1">
+        <div class="hero-bg" style="background-image:url('assets/images/campus-2.jpg')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-kicker">NITER Smart Campus</p>
+          <h1>Building Future Leaders Through<br/>Engineering and Technology</h1>
+          <p class="hero-desc">Five departments, modern laboratories and industry collaboration shaping skilled professionals.</p>
+          <div class="hero-btns">
+            <a href="#/departments" class="btn btn-gold"><svg class="ic"><use href="#i-layers"/></svg> Explore NITER</a>
+            <a href="#/login/teacher" class="btn btn-outline-light"><svg class="ic"><use href="#i-lock"/></svg> Access Portal</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-i="2">
+        <div class="hero-bg" style="background-image:url('assets/images/campus-1.jpg')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-kicker">NITER Smart Campus</p>
+          <h1>Smart Learning,<br/>Connected Campus</h1>
+          <p class="hero-desc">Real-time transport, digital services and a connected experience for students, teachers and staff.</p>
+          <div class="hero-btns">
+            <a href="#/transport" class="btn btn-gold"><svg class="ic"><use href="#i-bus"/></svg> Explore NITER</a>
+            <a href="#/login/admin" class="btn btn-outline-light"><svg class="ic"><use href="#i-lock"/></svg> Access Portal</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-i="3">
+        <div class="hero-bg" style="background-image:url('assets/images/hero-4.jpg')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-kicker">NITER Smart Campus</p>
+          <h1>Innovation, Research and<br/>Sustainable Development</h1>
+          <p class="hero-desc">Modern laboratories and industry collaboration shaping the engineering and technology workforce of tomorrow.</p>
+          <div class="hero-btns">
+            <a href="#/research" class="btn btn-gold"><svg class="ic"><use href="#i-flask"/></svg> Explore NITER</a>
+            <a href="#/login/student" class="btn btn-outline-light"><svg class="ic"><use href="#i-lock"/></svg> Access Portal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide"><svg class="ic"><use href="#i-arrow"/></svg></button>
+    <button class="hero-arrow next" id="heroNext" aria-label="Next slide"><svg class="ic"><use href="#i-arrow"/></svg></button>
+    <div class="hero-dots" id="heroDots"></div>
+    <a class="hero-transport-chip" href="#/transport"><svg class="ic"><use href="#i-bus"/></svg> Smart Transport</a>
+  </section>
+
+  <!-- ===== QUICK ACCESS ===== -->
+  <section class="section quick-section">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow"><svg class="ic"><use href="#i-target"/></svg> Quick Access</p>
+        <h2 class="h-display">Everything at Your Fingertips</h2>
+      </div>
+      <div class="quick-grid" id="quickGrid">
+        <a class="qcard" href="#/academic-calendar"><span class="q-icon"><svg class="ic"><use href="#i-cal"/></svg></span><h3>Academic Calendar</h3><p>Semester schedules, exam dates, holidays, and important academic deadlines.</p><span class="q-more">View More <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+        <a class="qcard" href="#/class-routine"><span class="q-icon"><svg class="ic"><use href="#i-file"/></svg></span><h3>Class Routine</h3><p>Daily and weekly class schedules for every department, batch, and section.</p><span class="q-more">View More <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+        <a class="qcard" href="#/notices"><span class="q-icon"><svg class="ic"><use href="#i-bell"/></svg></span><h3>Notice Board</h3><p>Official announcements, circulars, and important campus updates.</p><span class="q-more">View More <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+        <a class="qcard" href="#/courses"><span class="q-icon"><svg class="ic"><use href="#i-book"/></svg></span><h3>Course Information</h3><p>Course catalog with credits, types, and assigned faculty for each program.</p><span class="q-more">View More <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+        <a class="qcard" href="#/rooms"><span class="q-icon"><svg class="ic"><use href="#i-home"/></svg></span><h3>Room Availability</h3><p>Live availability of theory rooms and laboratories across the campus.</p><span class="q-more">View More <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+        <a class="qcard" href="#/helping-zone"><span class="q-icon"><svg class="ic"><use href="#i-heart"/></svg></span><h3>Student Helping Zone</h3><p>Submit academic questions, requests, and get support from faculty.</p><span class="q-more">View More <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LATEST NOTICES ===== -->
+  <section class="section alt">
+    <div class="container">
+      <div class="sec-head split">
+        <div>
+          <p class="eyebrow"><svg class="ic"><use href="#i-bell"/></svg> Notice Board</p>
+          <h2 class="h-display">Latest Notices</h2>
+          <p class="sec-sub">Official announcements and important updates from NITER administration.</p>
+        </div>
+        <a href="#/notices" class="btn btn-outline">View All Notices <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="notices-grid" id="noticesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS & EVENTS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow"><svg class="ic"><use href="#i-star"/></svg> Stay Informed</p>
+        <h2 class="h-display">News and Events</h2>
+        <p class="sec-sub">The latest from the NITER campus community.</p>
+      </div>
+      <div class="news-events-grid">
+        <div class="news-col">
+          <h3 class="col-head">LATEST NEWS</h3>
+          <div id="newsList"></div>
+        </div>
+        <div class="events-col">
+          <h3 class="col-head">UPCOMING EVENTS</h3>
+          <div id="homeEventsList"></div>
+          <a href="#/news-events" class="btn btn-outline btn-sm" style="margin-top:14px">View All Events <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT NITER ===== -->
+  <section class="section alt">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <p class="eyebrow"><svg class="ic"><use href="#i-home"/></svg> About NITER</p>
+        <h2 class="h-display">Shaping the Engineers of Tomorrow</h2>
+        <p class="about-lead">The National Institute of Engineering and Research is committed to excellence in engineering education, research, innovation, and the development of skilled professionals for the engineering and technology sectors.</p>
+        <div class="about-values" id="aboutValues"></div>
+      </div>
+      <div class="about-visual">
+        <img src="assets/images/campus-3.jpg" alt="NITER main gate — National Institute of Engineering and Research" class="about-img" />
+        <div class="counters" id="aboutCounters"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACADEMIC DEPARTMENTS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow"><svg class="ic"><use href="#i-layers"/></svg> Academic Departments</p>
+        <h2 class="h-display">Five Departments, One Mission</h2>
+        <p class="sec-sub">Each department combines rigorous academics, hands-on laboratories and industry-aligned programs.</p>
+      </div>
+      <div class="dept-grid" id="deptGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== CAMPUS STATISTICS ===== -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="sec-head light">
+        <p class="eyebrow light"><svg class="ic"><use href="#i-signal"/></svg> NITER at a Glance</p>
+        <h2 class="h-display">Campus Statistics</h2>
+        <p class="sec-sub">Live figures from the NITER Smart Campus system.</p>
+      </div>
+      <div class="stats-grid" id="statsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== DIRECTOR MESSAGE ===== -->
+  <section class="section">
+    <div class="container director-grid">
+      <div class="director-card">
+        <img src="assets/images/director.jpg" alt="Prof. Dr. Ashequl Alam Rana — Director, NITER" />
+        <h3>Prof. Dr. Ashequl Alam Rana</h3>
+        <p>Director, NITER</p>
+      </div>
+      <div class="director-message">
+        <svg class="quote-ic"><use href="#i-quote"/></svg>
+        <p class="eyebrow">Message from the Director</p>
+        <h2 class="h-display">A Community of Learning, Innovation and Growth</h2>
+        <p class="director-text">Welcome to the National Institute of Engineering and Research — a community where engineering, technology and creativity come together to shape the future. Our commitment is to nurture every student into a skilled, ethical and innovative professional who contributes meaningfully to the nation and beyond.</p>
+        <p class="director-text">With the NITER Smart Campus ecosystem, we are bringing academics, transport, communication and campus life into a single connected digital experience — so that our students and teachers can focus on what matters most: learning, research and growth.</p>
+        <div class="director-sign">
+          <strong>Prof. Dr. Ashequl Alam Rana</strong>
+          <span>Director, NITER · Welcome message 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== UPCOMING EVENTS ===== -->
+  <section class="section alt">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow"><svg class="ic"><use href="#i-cal"/></svg> Mark Your Calendar</p>
+        <h2 class="h-display">Upcoming Events</h2>
+        <p class="sec-sub">Conferences, competitions and workshops across the NITER campus.</p>
+      </div>
+      <div class="events-grid" id="eventsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== CAMPUS LIFE GALLERY ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow"><svg class="ic"><use href="#i-heart"/></svg> Campus Life</p>
+        <h2 class="h-display">Life at NITER</h2>
+        <p class="sec-sub">A vibrant campus — academics, clubs, culture and sport.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== STUDENT SERVICES ===== -->
+  <section class="section alt">
+    <div class="container">
+      <div class="sec-head split">
+        <div>
+          <p class="eyebrow"><svg class="ic"><use href="#i-users"/></svg> Student Services</p>
+          <h2 class="h-display">Everything You Need, in One Place</h2>
+          <p class="sec-sub">Support services designed around the student journey — academic, personal and professional.</p>
+        </div>
+        <a href="#/student-services" class="btn btn-outline">Explore Services <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <span class="q-icon"><svg class="ic"><use href="#i-mail"/></svg></span>
+        <h3>Email Us</h3>
+        <p>info@niter.edu.bd</p>
+      </div>
+      <div class="contact-card">
+        <span class="q-icon"><svg class="ic"><use href="#i-phone"/></svg></span>
+        <h3>Call Us</h3>
+        <p>+880 2-7791094</p>
+      </div>
+      <div class="contact-card">
+        <span class="q-icon"><svg class="ic"><use href="#i-pin"/></svg></span>
+        <h3>Visit Campus</h3>
+        <p>Nayarhat, Savar, Dhaka-1340, Bangladesh</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= DYNAMIC VIEW (sub-pages render here) ======================= -->
+<main id="view" hidden></main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="f-brand">
+      <a class="logo footer-logo" href="#/">
+        <img src="photos/niter_logo.jpg" alt="NITER Logo" class="logo-mark-img" />
+        <span class="brand-text"><strong>NITER Smart Campus Management System</strong><em>Empowering Education, Innovation &amp; Excellence</em></span>
+      </a>
+      <p class="f-address">National Institute of Engineering and Research<br/>Nayarhat, Savar, Dhaka, Bangladesh</p>
+      <div class="f-social">
+        <a href="#" aria-label="Facebook"><svg class="ic"><use href="#i-fb"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg class="ic"><use href="#i-yt"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg class="ic"><use href="#i-li"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="ic"><use href="#i-ig"/></svg></a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>QUICK LINKS</h4>
+      <a href="#/about" class="f-link">About NITER</a>
+      <a href="#/academics" class="f-link">Academic Programs</a>
+      <a href="#/departments" class="f-link">Departments</a>
+      <a href="#/notices" class="f-link">Notices</a>
+      <a href="#/news-events" class="f-link">News and Events</a>
+      <a href="#/student-services" class="f-link">Student Services</a>
+    </div>
+    <div class="f-col">
+      <h4>PORTAL</h4>
+      <a href="#/login/student" class="f-link">Student Portal</a>
+      <a href="#/login/teacher" class="f-link">Teacher Portal</a>
+      <a href="#/login/admin" class="f-link">Admin Portal</a>
+      <h4 style="margin-top:18px">TRANSPORT</h4>
+      <a href="#/transport" class="f-link"><svg class="ic"><use href="#i-bus"/></svg> Smart Transport</a>
+      <a href="#/driver" class="f-link"><svg class="ic"><use href="#i-route"/></svg> Driver Console</a>
+    </div>
+    <div class="f-col">
+      <h4>CONTACT</h4>
+      <a href="mailto:info@niter.edu.bd" class="f-link"><svg class="ic"><use href="#i-mail"/></svg> info@niter.edu.bd</a>
+      <a href="tel:+88027791094" class="f-link"><svg class="ic"><use href="#i-phone"/></svg> +880 2-7791094</a>
+      <span class="f-link"><svg class="ic"><use href="#i-pin"/></svg> Nayarhat, Savar, Dhaka-1340, Bangladesh</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© 2026 NITER Smart Campus Management System. All Rights Reserved.</span>
+      <button class="to-top" id="toTop" aria-label="Back to Top"><svg class="ic"><use href="#i-chev"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= CHATBOT ======================= -->
+<div class="chatbot" id="chatbot" hidden>
+  <div class="chat-head">
+    <span class="chat-ava"><svg class="ic"><use href="#i-chat"/></svg></span>
+    <span><strong>NITER Transport Assistant</strong><small>Ask about buses, routes &amp; schedules</small></span>
+    <button id="chatClose"><svg class="ic"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <form class="chat-input" id="chatForm">
+    <input id="chatText" type="text" placeholder="e.g. Where is my bus?" autocomplete="off" />
+    <button type="submit" aria-label="Send"><svg class="ic"><use href="#i-send"/></svg></button>
+  </form>
+</div>
+<button class="chat-fab" id="chatFab" aria-label="NITER Transport Assistant"><svg class="ic"><use href="#i-chat"/></svg></button>
+
+<!-- ======================= MODALS / TOASTS ======================= -->
+<div class="modal-root" id="modalRoot" hidden></div>
+<div class="toast-root" id="toastRoot"></div>
+
+<!-- ======================= SCRIPTS (classic, order matters, no modules) ======================= -->
+<!-- v20260814-2 cache-busting so browsers always pick up the latest JS/CSS -->
+<script src="js/data.js?v=20260814-2"></script>
+<script src="js/ui.js?v=20260814-2"></script>
+<script src="js/home.js?v=20260814-2"></script>
+<script src="js/pages.js?v=20260814-2"></script>
+<script src="js/map.js?v=20260814-2"></script>
+<script src="js/transport.js?v=20260814-2"></script>
+<script src="js/vendor/socket.io.min.js?v=20260814-2"></script>
+<script src="js/live.js?v=20260814-2"></script>
+<script src="js/auth.js?v=20260814-2"></script>
+<script src="js/portals.js?v=20260814-2"></script>
+<script src="js/driver.js?v=20260814-2"></script>
+<script src="js/app.js?v=20260814-2"></script>
+</body>
+</html>

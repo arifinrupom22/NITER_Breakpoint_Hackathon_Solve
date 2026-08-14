@@ -1,0 +1,30 @@
+name: niter_transport
+description: NITER Transport — smart campus bus tracking, digital passes and AI arrival predictions for NITER students, teachers and drivers.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  http: ^1.2.0
+  socket_io_client: ^2.0.3
+  provider: ^6.1.2
+  shared_preferences: ^2.2.2
+  qr_flutter: ^4.1.0
+  geolocator: ^11.0.0
+  google_fonts: ^6.2.1
+  intl: ^0.19.0
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

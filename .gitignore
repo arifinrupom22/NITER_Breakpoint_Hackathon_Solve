@@ -1,0 +1,4 @@
+.freebuff/
+.env
+.env.local
+.env.*.local
