@@ -1,6 +1,6 @@
 # NITER Smart Campus + NITER Smart Transport
 
-**National Institute of Textile Engineering and Research** — a connected smart-campus and smart-transport ecosystem for the NITER Innovate Hackathon.
+**National Institute of Engineering and Research** — a connected smart-campus and smart-transport ecosystem for the NITER Innovate Hackathon.
 
 This version is a **fully static, zero-dependency website**. It runs directly from `index.html` by double-clicking it — no `npm`, no `node`, no localhost, no build step, no backend. Every feature (university website, Smart Transport with live bus simulation, portals, driver console, chatbot, maps) runs on plain **HTML + CSS + JavaScript** with demo data stored in `js/data.js` and persistence via `localStorage`.
 
@@ -57,7 +57,7 @@ NITER-Smart-Campus/
 - Full premium NITER university website with **real campus photos**: top bar with **live clock**, sticky header, main navigation, **hero slider (4 slides, real NITER campus photos, kenburns + auto-advance)**, quick access, notices (NEW/IMPORTANT badges), news & events, about + animated counters, departments, campus statistics, director message, upcoming events, campus-life gallery with lightbox, student services, contact + footer.
 - **SMART TRANSPORT** is a separate top-level nav item (before PORTAL):
   - Four buses: Student Bus 1 (Khamarbari, 6:40 AM), Student Bus 2 (Uttara, 6:30 AM), Teacher Bus 1 (Mirpur, 6:45 AM), Teacher Bus 2 (Shyamoli, 6:45 AM) — **exact routes preserved**.
-  - **See Bus Location → verify (Student: name + Bus Card No. / Teacher: name + Teacher ID) → bus selection → live Leaflet map** with route line, stops, moving bus marker, ETA, traffic status, occupancy, distance, speed. Unauthorized attempts show the professional "authorized access only" message.
+  - **See Bus Location → verify (Student: name + Bus Card No. / Teacher: short name + Teacher/Transport ID, e.g. `SSH` + `T002`) → bus selection → live Leaflet map** with route line, stops, moving bus marker, ETA, traffic status, occupancy, distance, speed. Unauthorized attempts show the professional "authorized access only" message.
   - **DEMO SIMULATION** badge everywhere — never presented as real GPS.
 - **PORTAL** dropdown → Student / Teacher / Admin portals with working demo logins and dashboards (courses, routine, attendance, results, Smart Bus Pass with QR, Helping Zone, marks, admin CRUD + reports + transport admin).
 - **Driver Console** (phone-framed): driver login → assigned bus → **Start Trip / End Trip** → GPS simulation updates the website map, bus cards, admin dashboard **in real time** (same-tab events + cross-tab `localStorage` sync).
@@ -73,9 +73,25 @@ NITER-Smart-Campus/
 | Sneha Rahman | `CS 2405026` | BUS26 |
 | Nabila Nawshin | `CS 2405032` | BUS32 |
 
-**Transport live tracking** (Smart Transport → See Bus Location): same three students (Name + BUS06/BUS26/BUS32), or teachers with their Teacher ID.
+**Transport live tracking** (Smart Transport → See Bus Location): same three students (Name + BUS06/BUS26/BUS32), or teachers with their **short name + Teacher/Transport ID** (e.g. `SSH` + `T002`).
 
-**Teacher portal** (password `teacher123`): `T001` Dr. Rahman · `T002` Prof. Ahmed · `T003` Ms. Sultana
+**Teacher portal** (password `654321@#` — same for all teachers; login with the **Teacher ID short name**):
+
+| Teacher ID (login) | Name | Transport ID (T-ID) |
+|---|---|---|
+| JTT | Jarin Tasnim Tamanna | T001 |
+| SSH | Shakila Shafiq | T002 |
+| UKD | Utpol Kanti Das | T003 |
+| MAB | Md. Abul Basar | T004 |
+| MdAM | Md. Alam Miah | T005 |
+| TA | Tanvir Ahmed | T006 |
+| MR | Muaz Rahman | T007 |
+| DMSS | Dr. Mohammed Shahriar Sabuktagin | T008 |
+| SKB | Shemanta Kumar Biswas | T009 |
+| KN | Kamrun Nahar | T010 |
+| MMR | Md. Musfikur Rahman | T011 |
+
+> The optional `full-stack/` version still keeps its own **legacy demo accounts** (`T001` / `teacher123` with Dr. Rahman, Prof. Ahmed, Ms. Sultana). Those belong to the old React prototype and are separate from the static site's credentials above.
 
 **Admin portal**: `admin` / `admin123`
 

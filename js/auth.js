@@ -49,7 +49,7 @@
       <div class="login-cred">
         <strong style="font-size:13px;display:block;margin-bottom:6px">Demo Credentials</strong>
         <b>Teacher ID (short name):</b> <code>SSH</code> &nbsp;·&nbsp; <b>Password:</b> <code>654321@#</code>
-        <span style="display:block;margin-top:6px;font-size:12px;color:var(--ink-500)">e.g. <code>JTT</code>, <code>SSH</code>, <code>UKD</code>, <code>MR</code>, <code>SKB</code>, <code>KN</code>, <code>MMR</code>, <code>MAB</code>, <code>MdAM</code>, <code>TA</code>, <code>DMSS</code> — password is the same for all.</span>
+        <span style="display:block;margin-top:6px;font-size:12px;color:var(--ink-500)">All 11 teachers — login with the short name below, password is the same for all: <code>JTT</code>, <code>SSH</code>, <code>UKD</code>, <code>MAB</code>, <code>MdAM</code>, <code>TA</code>, <code>MR</code>, <code>DMSS</code>, <code>SKB</code>, <code>KN</code>, <code>MMR</code>.</span>
       </div>`
       : `<div class="login-cred">Demo admin — <code>admin</code> / <code>admin123</code></div>`;
 
